@@ -2,18 +2,40 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Redirecting</title>
+     <title>Redirecting</title>
   </head>
+
   <body>
-  Redirecting...
+    Redirecting...
   </body>
+
   <script>
-  if (window.location.search == ""){
-    window.location.href = "https://github.com/ewerx/x-redirect/";
-  } else {
-    const queryString = window.location.search;
-    window.location.href = queryString.split("://")[0].substr(1) + "://" + queryString.split("://")[1];
+    // Check if there is a query string
+    const queryString = window.location.search.substring(1); // Remove the '?' from the query string
+    const defaultURL = "https://github.com/tech1savvy" // or add your link tree
+
+    if (queryString === "") {
+      // If no query string, redirect to a default URL
+      window.location.href = defaultURL; 
+    } else {
+      // Match query string values to specific URLs
+      switch (queryString) {
+        case "react-component-gallery":
+          window.location.href = "https://github.com/tech1savvy/react-component-gallery";
+          break;
+        case "niftybooks":
+          window.location.href = "https://github.com/tech1savvy/react-component-gallery";
+          break;
+        case "example-page":
+          window.location.href = "https://example.com";
+          break;
+        default:
+          window.location.href = defaultURL; 
+          break;
+      }
+
+    }
+    // Close the window after redirecting
     window.close();
-  };
   </script>
 </html>
