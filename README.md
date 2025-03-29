@@ -4,12 +4,12 @@ A http(s) interface to custom url scheme.
 
 ## Usage
 
-Deploy index.html somewhere (e.g. `myhost.com/index.html`)
-Then create http(s) links that redirect to custom URI scheme links:
-e.g. 
-`https://myhost.com?x-devonthink-item://870E7555-1953-45D6-B143-B2D857F8FD0C` will redirect to `x-devonthink-item://870E7555-1953-45D6-B143-B2D857F8FD0C`
-`https://redirect.domain.com?obsidian://open?vault=MyVault&file=Home.md` will redirect to `obsidian://open?vault=MyVault&file=Home.md`
+- `https://tech1savvy.github.io/x-redirect/?keyword` will redirect to the url assigned to that keyword in [index.html](index.html)
+```html
+case "keyword":
+    window.location.href = "https://example.com";
+    break;
+```
 
-## Motivation
-
-Allowing custom url scheme to work cross-platform on notion.so.
+## Current Assigned Redirects
+- `niftiybooks`: `https://github.com/tech1savvy/react-component-gallery`
